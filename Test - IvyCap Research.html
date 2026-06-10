@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IvyCap Ventures — SuperReturn EM 2026 Speaker Intelligence</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f9f9f7;color:#1a1a18;padding:2rem 1.5rem;max-width:960px;margin:0 auto}
+.hdr{padding-bottom:1rem;border-bottom:1px solid #e5e4df;margin-bottom:1.25rem}
+.hdr h1{font-size:16px;font-weight:500}
+.hdr p{font-size:12px;color:#888780;margin-top:3px}
+.badge{font-size:11px;padding:3px 8px;border-radius:20px;font-weight:500;display:inline-block}
+.badge-blue{background:#E6F1FB;color:#0C447C}
+.badge-green{background:#EAF3DE;color:#27500A}
+.badge-amber{background:#FAEEDA;color:#633806}
+.badge-teal{background:#E1F5EE;color:#085041}
+.badge-gray{background:#F1EFE8;color:#444441}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:1rem}
+.metric{background:#f1f0eb;border-radius:8px;padding:0.75rem 1rem}
+.metric-lbl{font-size:11px;color:#888780;margin-bottom:2px}
+.metric-val{font-size:20px;font-weight:500}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;align-items:center}
+.controls input,.controls select{font-size:13px;padding:7px 10px;border:0.5px solid #ccc;border-radius:8px;background:#fff;outline:none}
+.controls input{flex:1;min-width:160px}
+.controls input:focus,.controls select:focus{border-color:#888}
+.tbl-wrap{overflow-x:auto;border:1px solid #e5e4df;border-radius:12px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+th{font-size:11px;font-weight:500;color:#888780;text-align:left;padding:8px 12px;border-bottom:1px solid #e5e4df;background:#f9f9f7;cursor:pointer;white-space:nowrap}
+th:hover{color:#1a1a18}
+td{padding:9px 12px;border-bottom:1px solid #e5e4df;vertical-align:top;color:#1a1a18}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#f9f9f7}
+.name-cell{font-weight:500;font-size:13px}
+.org-cell{font-size:12px;color:#888780;margin-top:1px}
+.stars{color:#BA7517;letter-spacing:1px;font-size:13px}
+.detail-row td{background:#f4f3ee;padding:12px 16px}
+.detail-inner{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.detail-section p{font-size:11px;color:#888780;margin-bottom:4px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
+.detail-section span{font-size:13px;color:#1a1a18;line-height:1.6}
+.outreach-box{background:#fff;border:0.5px solid #e5e4df;border-radius:8px;padding:10px 12px;font-size:12px;color:#444441;line-height:1.7;margin-top:6px;white-space:pre-wrap;font-family:inherit}
+.expand-btn{background:none;border:none;cursor:pointer;font-size:18px;color:#b4b2a9;padding:0 4px;line-height:1}
+.expand-btn:hover{color:#1a1a18}
+.li-link{font-size:12px;color:#185FA5;text-decoration:none}
+.li-link:hover{text-decoration:underline}
+.score-bar-wrap{width:50px;height:5px;background:#e5e4df;border-radius:3px;display:inline-block;vertical-align:middle;margin-left:6px}
+.score-bar{height:5px;border-radius:3px}
+.footer{margin-top:1.5rem;font-size:11px;color:#b4b2a9;text-align:center;padding-top:1rem;border-top:1px solid #e5e4df}
+@media(max-width:600px){.detail-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <div>
+      <h1>SuperReturn Emerging Markets 2026 — Speaker Intelligence</h1>
+      <p>Amsterdam, 15–17 June 2026 &nbsp;·&nbsp; Prepared for IvyCap Ventures &nbsp;·&nbsp; Varun Nankani</p>
+    </div>
+    <span class="badge badge-blue">Tasks 1 + 2 + 3</span>
+  </div>
+</div>
+
+<div class="metrics" id="metrics"></div>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search name, org, focus...">
+  <select id="filter-priority">
+    <option value="">All priorities</option>
+    <option value="5">★★★★★ Critical</option>
+    <option value="4">★★★★ High</option>
+    <option value="3">★★★ Medium</option>
+    <option value="2">★★ Lower</option>
+  </select>
+  <select id="filter-type">
+    <option value="">All types</option>
+    <option value="LP">LP</option>
+    <option value="GP">GP</option>
+    <option value="DFI">DFI</option>
+  </select>
+  <select id="filter-india">
+    <option value="">All regions</option>
+    <option value="1">India / Asia angle</option>
+  </select>
+</div>
+
+<div class="tbl-wrap">
+<table id="tbl">
+<thead>
+<tr>
+  <th style="width:32px"></th>
+  <th style="width:210px" onclick="sortBy('name')">Speaker ↕</th>
+  <th style="width:90px" onclick="sortBy('score')">Priority ↕</th>
+  <th style="width:70px">Type</th>
+  <th style="width:130px">Relevance</th>
+  <th style="width:90px">Accessibility</th>
+  <th style="width:80px">LinkedIn</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+<div class="footer">IvyCap Ventures · SuperReturn EM 2026 Speaker Research · Varun Nankani · June 2026</div>
+
+<script>
+const SPEAKERS = [
+  {name:"Yoshi Kiguchi",org:"Pension Fund of Japanese Corporations",role:"CIO",type:"LP",score:5,india:1,region:"Asia",focus:"Pension LP, EM allocation, Asia-Pacific",relevance:"LP fundraising",access:"High",bg:"CIO of PFJC, a major Japanese institutional LP actively allocating to EM private equity. High potential for IvyCap fund LP engagement.",outreach:"Hi Yoshi,\n\nYour institution's commitment to emerging market private equity is well-documented — I'd love to discuss how IvyCap's India-focused portfolio aligns with PFJC's EM allocation thesis. Would you be open to a conversation on the sidelines at SuperReturn?\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Yoshi+Kiguchi+Pension+Fund+Japanese"},
+  {name:"Ronald Wuijster",org:"APG Asset Management",role:"Former CEO",type:"LP",score:5,india:0,region:"Europe",focus:"Pension, global EM allocation, ESG",relevance:"LP fundraising",access:"High",bg:"Former Executive Board Member & CEO at APG (€600B+ AUM). One of Europe's most senior pension executives with deep EM conviction.",outreach:"Hi Ronald,\n\nAPG's long-standing commitment to emerging markets private equity is a benchmark for the industry. As IvyCap looks to deepen its LP relationships with European institutions, your perspective on EM allocation would be invaluable. Happy to connect at SuperReturn.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Ronald+Wuijster+APG"},
+  {name:"Chirantan Patnaik",org:"British International Investment (BII)",role:"Director, Venture Capital",type:"DFI",score:5,india:1,region:"India/South Asia",focus:"India VC, growth equity, DFI",relevance:"LP + co-invest",access:"Medium",bg:"Leads VC at BII (UK's DFI), one of the most active institutional investors in Indian venture and growth equity. Direct overlap with IvyCap's stage and geography.",outreach:"Hi Chirantan,\n\nBII's VC activity in India closely mirrors IvyCap's own portfolio focus — I think there's a compelling case for a closer dialogue, whether on co-investment or LP engagement. Would love to explore this at SuperReturn Emerging Markets.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/in/chirantan-patnaik"},
+  {name:"Dr. Arvind Gupta",org:"National Pension System Trust",role:"Co-Founder, Digital India Foundation",type:"LP",score:5,india:1,region:"India",focus:"Digital India, NPS Trust, tech policy",relevance:"LP + strategic",access:"Medium",bg:"Trustee at NPS Trust (India's national pension system) and co-founder of Digital India Foundation. Rare blend of policy influence and institutional LP access for India-focused funds.",outreach:"Hi Arvind,\n\nYour work at both the Digital India Foundation and NPS Trust represents exactly the intersection of policy and private capital that IvyCap operates in. I'd love to share how we're channelling institutional capital into India's tech growth story.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Arvind+Gupta+Digital+India+Foundation"},
+  {name:"Shivani Bhasin Sachdeva",org:"India Alternatives",role:"Founder & CEO",type:"GP",score:5,india:1,region:"India",focus:"India PE/VC, alternatives, fund of funds",relevance:"Co-invest + peer",access:"High",bg:"Founder of India Alternatives, one of India's leading fund-of-funds platforms. Strong India GP peer with LP network that IvyCap could tap for secondary introductions.",outreach:"Hi Shivani,\n\nIndia Alternatives' work building the fund-of-funds ecosystem in India is something IvyCap deeply respects. Given how closely our investment universes overlap, I'd love to connect at SuperReturn to explore collaboration.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/in/shivanibhasin"},
+  {name:"Abrar Mir",org:"Quadria Capital",role:"Co-Founder & Managing Partner",type:"GP",score:5,india:1,region:"South/Southeast Asia",focus:"Healthcare, India, SEA growth equity",relevance:"Co-invest + sector",access:"Medium",bg:"Co-founder of Quadria Capital, one of Asia's leading healthcare-focused PE funds. Strong India and Southeast Asia footprint, relevant for IvyCap's health-tech portfolio companies.",outreach:"Hi Abrar,\n\nQuadria's focus on healthcare across South and Southeast Asia is directly complementary to some of IvyCap's portfolio companies in health-tech. Would love to explore co-investment opportunities on the sidelines in Amsterdam.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Abrar+Mir+Quadria+Capital"},
+  {name:"Andrés Ackermann",org:"IDB Invest",role:"Director & Head of Investment Funds",type:"DFI",score:4,india:0,region:"LatAm/Global",focus:"DFI fund investing, EM VC",relevance:"LP fundraising",access:"Medium",bg:"Head of fund investing at IDB Invest (Inter-American Development Bank). Active in EM fund commitments across asset classes — potential LP for IvyCap's global strategy.",outreach:"Hi Andrés,\n\nIDB Invest's track record as an LP to emerging market managers is well-regarded. As IvyCap looks to diversify its LP base across multilaterals, I'd love to learn more about your fund investment criteria.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Andres+Ackermann+IDB+Invest"},
+  {name:"Monica Brand Engel",org:"Quona Capital",role:"Co-Founder & Managing Partner",type:"GP",score:4,india:1,region:"India/EM",focus:"Fintech, financial inclusion, EM VC",relevance:"Co-invest + sector",access:"Medium",bg:"Co-founder of Quona Capital, a leading fintech-focused VC in emerging markets including India. Directly relevant to IvyCap's fintech and financial inclusion portfolio.",outreach:"Hi Monica,\n\nQuona's work in fintech for financial inclusion resonates strongly with the kind of companies we back at IvyCap. Given the India overlap, I think there's a real co-investment conversation worth having at SuperReturn.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/in/monicabrandengel"},
+  {name:"Sunish Sharma",org:"Kedaara Capital",role:"Founder & Managing Partner",type:"GP",score:4,india:1,region:"India",focus:"India growth equity, PE",relevance:"Peer GP + LP network",access:"Low",bg:"Founder of Kedaara Capital, one of India's premier growth equity funds. Strong LP network and deep India PE relationships useful for IvyCap's LP mapping.",outreach:"Hi Sunish,\n\nKedaara's success in India growth equity is an inspiration for the ecosystem. I'd value your perspective on LP sentiment toward India-focused GPs globally — would be great to connect briefly at SuperReturn.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Sunish+Sharma+Kedaara+Capital"},
+  {name:"William Bao Bean",org:"Orbit Startups",role:"Managing General Partner",type:"GP",score:4,india:0,region:"Asia",focus:"Asia VC, accelerator, tech",relevance:"Co-invest + knowledge",access:"High",bg:"Managing GP at Orbit Startups and former Softbank Ventures GP. One of the most connected VC voices in Asia, particularly for tech and startup ecosystems.",outreach:"Hi William,\n\nYour work at Orbit Startups and your broader Asia VC perspective are well-known. I'm keen to explore where IvyCap's India portfolio might intersect with your deal flow — happy to connect in Amsterdam.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/in/wbb"},
+  {name:"Rahul Khandelwal",org:"Avvashya Capital Global Family Office",role:"Head",type:"LP",score:4,india:1,region:"India",focus:"India family office, private capital",relevance:"LP fundraising",access:"High",bg:"Head of Avvashya Capital, a notable Indian family office actively deploying into private equity and VC. Strong LP prospect for IvyCap given shared India anchor.",outreach:"Hi Rahul,\n\nAvvashya Capital's approach to private markets is well-regarded in the India family office space. As IvyCap continues to deepen its LP network, I'd love to understand your current allocation priorities.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Rahul+Khandelwal+Avvashya+Capital"},
+  {name:"Daniel Schoneveld",org:"Hamilton Lane",role:"Principal, Client Solutions",type:"LP",score:4,india:0,region:"Global",focus:"EM PE, secondaries, fund solutions",relevance:"LP + secondaries",access:"Medium",bg:"Hamilton Lane is one of the world's largest PE fund investors and secondaries platforms. Client solutions team is the entry point for GPs seeking LP commitments or secondary liquidity.",outreach:"Hi Daniel,\n\nHamilton Lane's scale in emerging markets PE and secondaries makes it a critical partner for funds like IvyCap. Would love to understand how you evaluate EM GPs and whether there's a fit worth exploring.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Daniel+Schoneveld+Hamilton+Lane"},
+  {name:"Anirudh A. Damani",org:"Artha India Ventures",role:"Director",type:"GP",score:4,india:1,region:"India",focus:"India VC, early-stage, tech",relevance:"Peer GP + co-invest",access:"High",bg:"Director at Artha India Ventures, one of India's active early-stage VC funds. Strong India ecosystem peer with potential for co-investment or LP referrals.",outreach:"Hi Anirudh,\n\nArtha's presence across India's early-stage ecosystem is something I've followed closely. Given our overlapping portfolios, I'd love to connect at SuperReturn to explore where our deal flows might complement each other.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/in/anirudh-a-damani"},
+  {name:"V. Shankar",org:"Gateway Partners",role:"Co-Founder & CEO",type:"GP",score:3,india:1,region:"Asia/ME/Africa",focus:"Multi-EM growth equity",relevance:"Peer GP + network",access:"Medium",bg:"Co-founder of Gateway Partners, a growth equity firm across Asia, ME and Africa. Former Standard Chartered executive with broad EM LP relationships.",outreach:"Hi Shankar,\n\nGateway Partners' multi-market EM approach is a model IvyCap studies closely as we expand globally. Your views on LP appetite across geographies would be very valuable.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=V+Shankar+Gateway+Partners"},
+  {name:"Maurizio Caio",org:"TLcom Capital",role:"Founder & Managing Partner",type:"GP",score:3,india:0,region:"Africa",focus:"Africa tech VC",relevance:"Knowledge + LP overlap",access:"Medium",bg:"Founder of TLcom, Africa's most prominent tech VC. While Africa-focused, TLcom's LP base overlaps with IvyCap's institutional targets.",outreach:"Hi Maurizio,\n\nTLcom's work building the African tech VC ecosystem is exemplary. I'd love to understand how you've built your institutional LP relationships — the parallels to IvyCap's India journey are real.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Maurizio+Caio+TLcom+Capital"},
+  {name:"Eric Newman",org:"City of Stamford",role:"Treasury Manager",type:"LP",score:3,india:0,region:"US",focus:"Municipal pension, EM allocation",relevance:"LP prospect",access:"High",bg:"Treasury Manager at City of Stamford pension. Smaller US municipal LP actively exploring EM allocations — accessible and worth a brief conversation.",outreach:"Hi Eric,\n\nI understand Stamford has been exploring emerging market allocations — I'd love to share IvyCap's India-focused story, which has been attracting interest from US institutional investors.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Eric+Newman+Stamford+Treasury"},
+  {name:"Felix Knidlberger",org:"SIFEM",role:"Deputy CIO",type:"DFI",score:3,india:0,region:"Global EM",focus:"Swiss DFI, EM fund investments",relevance:"LP fundraising",access:"Medium",bg:"Deputy CIO at SIFEM (Swiss development finance). Active fund investor in EM GPs, particularly in Asia and Africa.",outreach:"Hi Felix,\n\nSIFEM's track record as an LP to EM managers across Asia is something IvyCap has admired. We'd welcome the chance to present our fund strategy at SuperReturn.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Felix+Knidlberger+SIFEM"},
+  {name:"Aislinn Bakker",org:"Allianz Global Investors",role:"Director, Private Credit",type:"LP",score:3,india:0,region:"Global",focus:"Insurance LP, private credit, EM",relevance:"LP prospect",access:"Low",bg:"Private credit director at Allianz GI, one of Europe's largest insurance-linked asset managers. Potential LP as IvyCap expands to credit or blended finance.",outreach:"Hi Aislinn,\n\nAllianz GI's growing interest in private credit across EM is well-timed with where IvyCap is heading. Would love to share how our portfolio constructs risk in India's private markets.\n\nBest,\nVarun Nankani\nIvyCap Ventures",li:"https://www.linkedin.com/search/results/people/?keywords=Aislinn+Bakker+Allianz"},
+  {name:"Seema Arora Nambiar",org:"Shubhan Ventures",role:"CEO",type:"GP",score:2,india:1,region:"India",focus:"India VC, women-led",relevance:"Ecosystem",access:"High",bg:"CEO of Shubhan Ventures, an India-focused VC. Good ecosystem peer for IvyCap — limited direct LP or co-invest overlap but useful for warm introductions.",outreach:"",li:"https://www.linkedin.com/search/results/people/?keywords=Seema+Arora+Nambiar+Shubhan"},
+  {name:"William Pearce",org:"U.S. DFC",role:"Office of Investment Funds",type:"DFI",score:2,india:0,region:"Global EM",focus:"US DFI, EM fund investing",relevance:"LP (long-term)",access:"Low",bg:"DFC is the US government's development finance arm. Relevant long-term LP prospect but typically a slow pipeline — file for relationship building.",outreach:"",li:"https://www.linkedin.com/search/results/people/?keywords=William+Pearce+DFC"}
+];
+
+let sortKey='score',sortDir=-1,expanded=null;
+function stars(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
+function typeTag(t){const m={LP:'badge-blue',GP:'badge-green',DFI:'badge-teal'};return `<span class="badge ${m[t]||'badge-gray'}">${t}</span>`}
+function accessTag(a){const m={High:'badge-green',Medium:'badge-amber',Low:'badge-gray'};return `<span class="badge ${m[a]||'badge-gray'}">${a}</span>`}
+function scoreBar(s){const w=Math.round(s/5*100);const c=s>=5?'#639922':s>=4?'#BA7517':'#888780';return `<span class="score-bar-wrap"><span class="score-bar" style="width:${w}%;background:${c}"></span></span>`}
+function render(){
+  const q=(document.getElementById('search').value||'').toLowerCase();
+  const fp=document.getElementById('filter-priority').value;
+  const ft=document.getElementById('filter-type').value;
+  const fi=document.getElementById('filter-india').value;
+  let data=[...SPEAKERS];
+  if(q) data=data.filter(s=>(s.name+s.org+s.role+s.focus+s.relevance).toLowerCase().includes(q));
+  if(fp) data=data.filter(s=>s.score==+fp);
+  if(ft) data=data.filter(s=>s.type===ft);
+  if(fi) data=data.filter(s=>s.india===1);
+  data.sort((a,b)=>sortKey==='name'?sortDir*(a.name.localeCompare(b.name)):sortDir*(a.score-b.score));
+  const total=data.length,pri=data.filter(s=>s.score>=4).length,lps=data.filter(s=>s.type==='LP').length,india=data.filter(s=>s.india===1).length;
+  document.getElementById('metrics').innerHTML=`
+    <div class="metric"><div class="metric-lbl">Speakers shown</div><div class="metric-val">${total}</div></div>
+    <div class="metric"><div class="metric-lbl">Priority (4–5)</div><div class="metric-val">${pri}</div></div>
+    <div class="metric"><div class="metric-lbl">LP prospects</div><div class="metric-val">${lps}</div></div>
+    <div class="metric"><div class="metric-lbl">India / Asia angle</div><div class="metric-val">${india}</div></div>`;
+  const tbody=document.getElementById('tbody');
+  tbody.innerHTML='';
+  data.forEach(s=>{
+    const row=document.createElement('tr');
+    row.style.cursor='pointer';
+    row.innerHTML=`
+      <td><button class="expand-btn">${expanded===s.name?'−':'+'}</button></td>
+      <td><div class="name-cell">${s.name}</div><div class="org-cell">${s.org}</div></td>
+      <td><span class="stars">${stars(s.score)}</span>${scoreBar(s.score)}</td>
+      <td>${typeTag(s.type)}</td>
+      <td>${s.relevance}${s.india?' <span class="badge badge-blue" style="font-size:10px">India</span>':''}</td>
+      <td>${accessTag(s.access)}</td>
+      <td><a href="${s.li}" class="li-link" target="_blank" onclick="event.stopPropagation()">↗ Profile</a></td>`;
+    row.onclick=()=>{expanded=expanded===s.name?null:s.name;render()};
+    tbody.appendChild(row);
+    if(expanded===s.name){
+      const det=document.createElement('tr');
+      det.className='detail-row';
+      det.innerHTML=`<td colspan="7"><div class="detail-inner">
+        <div>
+          <div class="detail-section" style="margin-bottom:12px"><p>Background</p><span>${s.bg}</span></div>
+          <div class="detail-section"><p>Focus areas</p><span>${s.focus}</span></div>
+        </div>
+        <div>
+          <div class="detail-section"><p>Suggested outreach</p>
+            ${s.outreach?`<div class="outreach-box">${s.outreach}</div>`:'<span style="font-size:12px;color:#b4b2a9">Lower priority — no template included.</span>'}
+          </div>
+        </div>
+      </div></td>`;
+      tbody.appendChild(det);
+    }
+  });
+}
+['search','filter-priority','filter-type','filter-india'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{expanded=null;render()}));
+function sortBy(k){if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=k==='name'?1:-1;}render()}
+render();
+</script>
+</body>
+</html>
